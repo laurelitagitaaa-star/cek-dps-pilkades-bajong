@@ -2,8 +2,7 @@ import streamlit as st
 import pandas as pd
 st.set_page_config(page_title="Cek DPT Pilkades", page_icon="■■", layout="centered")
 st.title("■■ Sistem Cek DPT Online Pilkades")
-st.write("Silakan masukkan NIK atau Nama Lengkap Anda untuk mengecek status daftar pemilih dan lokasi
-TPS.")
+st.write("Silakan masukkan NIK atau Nama Lengkap Anda untuk mengecek status daftar pemilih dan lokasi TPS.")
 @st.cache_data
 def load_data():
 try:
@@ -35,8 +34,7 @@ st.markdown(f"""
 - **Lokasi Memilih:** :green[{row['TPS']}]
 """ )
 else:
-st.error("■ Data tidak ditemukan. Silakan hubungi Panitia Pilkades untuk konfirma
-si.")
+st.error("■ Data tidak ditemukan. Silakan hubungi Panitia Pilkades untuk konfirmasi.")
 else:
 nama_input = st.text_input("Masukkan Nama Lengkap (Sesuai KTP):")
 tombol = st.button("Cari Data")
