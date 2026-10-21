@@ -6,13 +6,13 @@ st.write("Silakan masukkan NIK atau Nama Lengkap Anda untuk mengecek status daft
 @st.cache_data
 def load_data():
 try:
-df = pd.read_excel("data_dpt.xlsx")
-df['NIK'] = df['NIK'].astype(str).str.strip()
-df['Nama Lengkap'] = df['Nama Lengkap'].astype(str).str.upper().str.strip()
-return df
+    df = pd.read_excel("data_dpt.xlsx")
+    df['NIK'] = df['NIK'].astype(str).str.strip()
+    df['Nama Lengkap'] = df['Nama Lengkap'].astype(str).str.upper().str.strip()
+    return df
 except Exception as e:
-st.error(f"Gagal memuat database DPT: {e}")
-return None
+    st.error(f"Gagal memuat database DPT: {e}")
+    return None
 df = load_data()
 if df is not None:
 search_option = st.radio("Metode Pencarian:", ("Berdasarkan NIK", "Berdasarkan Nama"))
